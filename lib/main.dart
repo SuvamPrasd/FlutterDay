@@ -1,6 +1,6 @@
 import 'package:ecommerce/utils/routes.dart';
+import 'package:ecommerce/widgets/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import './pages/home_page.dart';
 import './pages/login_page.dart';
 
@@ -14,13 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // home: HomePage(),
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.lato().fontFamily,
-      ),
+      theme: MyTheme.lightTheme(context),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      darkTheme: ThemeData.dark(),
+      darkTheme: MyTheme.darkTheme(context),
       initialRoute: "/home",
       routes: {
         "/": (context) => LoginPage(),
